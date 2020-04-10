@@ -23,8 +23,7 @@ namespace HashJoinInterface
         public MainWindow()
         {
             InitializeComponent();
-            Index indx = new Index("R2", "b1", "../../../R2-INSTANCES/R2-INSTANCE-1.csv");
-            List<long> list = indx.Search(2);
+            InnerTable innerTable = new InnerTable("../../../R2-INSTANCES/R2-INSTANCE-1.csv", "R2-1");
         }
     }
 }

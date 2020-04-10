@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace HashJoinInterface
 {
+    //Description: Class for an index for a table on a particutlar attribute.
     public class Index
     {
-        public string relation; //relation index is for
+        public string relationName; //relation index is for
         public string attribute; //attribute index is on
         private string pathToTable; //path to table index is on
         private List<Tuple<int, long>>[] hashTable; //each tuples contains the value of the attribute and a ref to a record in a file
         private const int numberBuckets = 13; //number of buckets in hash table
 
         //Description: Constructor
-        public Index(string rel, string attr, string path)
+        public Index(string rel, string attr, string path, String[] fileForTable)
         {
             //local vars
-            String[] records = null; //records of table in string format
             String[] attributes = null; //attributes of relation
             String[] record = null; //stores contents of a line
             int posOfAttribute = -1; //which attribute in CSV file
@@ -27,7 +27,7 @@ namespace HashJoinInterface
             int hashValue = -1; //hash of current record
 
             //initialize data members
-            relation = String.Copy(rel);
+            relationName = String.Copy(rel);
             attribute = String.Copy(attr);
             pathToTable = String.Copy(path);
 
@@ -39,11 +39,8 @@ namespace HashJoinInterface
                 hashTable[i] = new List<Tuple<int, long>>();
             }
 
-            //load file into array of strings
-            records = File.ReadAllLines(pathToTable);
-
             //get attributes for relation we are making index of
-            attributes = records[0].Split(',');
+            attributes = fileForTable[0].Split(',');
 
             //determine which attribute in CSV we are indexing
             for (int i = 0; i < attributes.Length; ++i)
@@ -51,14 +48,15 @@ namespace HashJoinInterface
                 if (attributes[i] == attribute)
                 {
                     posOfAttribute = i;
+                    break;
                 }
             }
 
             //create index
-            for (long i = 1; i < records.Length; ++i)
+            for (long i = 1; i < fileForTable.Length; ++i)
             {
                 //split line by comma
-                record = records[i].Split(',');
+                record = fileForTable[i].Split(',');
 
                 //get value of attribute we're indexing
                 valueOfAttribute = Convert.ToInt32(record[posOfAttribute]);
