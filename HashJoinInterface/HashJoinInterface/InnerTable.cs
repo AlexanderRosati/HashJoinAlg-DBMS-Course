@@ -10,12 +10,14 @@ namespace HashJoinInterface
     //description: class for an inner table.
     public class InnerTable
     {
+        /*data memebers*******************************************************************************************/
         public Index[] indexes; //indexes for relation
         public string pathToFile; //path to file for relation
         public String[] innerTableFile; //whole file for relation in memory
         public int numRows; //number of rows in table
         public string relationName; //name of relation
 
+        /*methods*******************************************************************************************/
         //description: constructor
         public InnerTable(string path, string name)
         {

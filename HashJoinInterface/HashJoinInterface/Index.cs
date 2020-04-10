@@ -10,12 +10,14 @@ namespace HashJoinInterface
     //Description: Class for an index for a table on a particutlar attribute.
     public class Index
     {
+        /*data members*******************************************************************************************/
         public string relationName; //relation index is for
         public string attribute; //attribute index is on
         private string pathToTable; //path to table index is on
         private List<Tuple<int, long>>[] hashTable; //each tuples contains the value of the attribute and a ref to a record in a file
         private const int numberBuckets = 13; //number of buckets in hash table
 
+        /*methods*******************************************************************************************/
         //Description: Constructor
         public Index(string rel, string attr, string path, String[] fileForTable)
         {

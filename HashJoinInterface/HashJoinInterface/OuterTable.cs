@@ -10,11 +10,13 @@ namespace HashJoinInterface
     //Description: Class for an outer table.
     public class OuterTable
     {
+        //data members*********************************************************************************************/
         public String[] outerTableFile; //whole file for relation in memory
         public string pathToFile; //path to file for relation
         public int numRows; //number of rows in table
         public string relationName; //name of relation instance
 
+        //methods*********************************************************************************************/
         //Description: constructor
         public OuterTable(string path, string relName)
         {

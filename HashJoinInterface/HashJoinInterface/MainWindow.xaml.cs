@@ -23,7 +23,6 @@ namespace HashJoinInterface
         public MainWindow()
         {
             InitializeComponent();
-            InnerTable innerTable = new InnerTable("../../../R2-INSTANCES/R2-INSTANCE-1.csv", "R2-1");
         }
     }
 }
