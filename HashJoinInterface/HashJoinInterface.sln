@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashJoinInterface", "HashJoinInterface\HashJoinInterface.csproj", "{CCADBD10-A786-40ED-9D9A-9438F972205C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "R1-Instances", "R1-Instances", "{50C2225B-DF76-4150-B42F-B974E9E86665}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "R2-Instances", "R2-Instances", "{B501C339-058A-41A8-8985-64AC884C78C5}"
+	ProjectSection(SolutionItems) = preProject
+		R2-INSTANCES\R2-INSTANCE-1.csv = R2-INSTANCES\R2-INSTANCE-1.csv
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCADBD10-A786-40ED-9D9A-9438F972205C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCADBD10-A786-40ED-9D9A-9438F972205C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCADBD10-A786-40ED-9D9A-9438F972205C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCADBD10-A786-40ED-9D9A-9438F972205C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
