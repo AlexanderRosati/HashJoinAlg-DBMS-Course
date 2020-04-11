@@ -33,7 +33,7 @@
             <TextBlock Name="R2AttributeLabel" Text="R2 Attribute:" Grid.Row="2" Grid.Column="1" FontSize="12" />
             <TextBlock Name="R1ListBoxLabel" Text="R1 Instance" Grid.Row="4" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
             <TextBlock Name="R2ListBoxLabel" Text="R2 Instance" Grid.Row="6" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
-            <TextBlock Name="JoinResultListBoxLabel" Text="JoinResult" Grid.Row="8" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
+            <TextBlock Name="JoinResultListBoxLabel" Text="Join Result" Grid.Row="8" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
             <TextBlock Name="SelectivityOfJoinLabel" Text="Selectivity Of Join: N/A" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" FontSize="12" Margin="50, 0, 0, 30" FontWeight="Bold"/>
             
             
