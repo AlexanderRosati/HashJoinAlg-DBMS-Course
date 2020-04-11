@@ -5,8 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HashJoinInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Hash Join Algorithm Interface" MaxHeight="350" MaxWidth="525" ResizeMode="CanMinimize">
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Name="R1InstanceLabel" Text="R1 Instance:" Grid.Row="0" Grid.Column="0" FontSize="12" Margin="10, 10, 0, 5"/>
+            <TextBlock Name="R1AttributeLabel" Text="R1 Attribute:" Grid.Row="2" Grid.Column="0" FontSize="12" Margin="10, 0, 0, 5"/>
+            <TextBlock Name="R2InstanceLabel" Text="R2 Instance:" Grid.Row="0" Grid.Column="1" FontSize="12" Margin="0, 10, 0, 5"/>
+            <TextBlock Name="R2AttributeLabel" Text="R2 Attribute:" Grid.Row="2" Grid.Column="1" FontSize="12" />
+            <TextBlock Name="R1ListBoxLabel" Text="R1 Instance" Grid.Row="4" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
+            <TextBlock Name="R2ListBoxLabel" Text="R2 Instance" Grid.Row="6" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
+            <TextBlock Name="JoinResultListBoxLabel" Text="JoinResult" Grid.Row="8" Grid.Column="0" FontSize="12" Margin="55, 0, 0, 5"/>
+            <TextBlock Name="SelectivityOfJoinLabel" Text="Selectivity Of Join: N/A" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" FontSize="12" Margin="50, 0, 0, 30" FontWeight="Bold"/>
+            
+            
+            
+            <ComboBox Name="R1InstanceComboBox" Grid.Row="1" Grid.Column="0" Height="20" Width="140" HorizontalAlignment="Left"
+                  Margin="8, 0, 10, 10" VerticalAlignment="Top" />
+
+            
+            <ComboBox Name="R2InstanceComboBox" Grid.Row="1" Grid.Column="1" Height="20" Width="140" HorizontalAlignment="Left"
+                  Margin="0, 0, 10, 10" VerticalAlignment="Top" />
+
+            <ComboBox Name="R1AttributeComboBox" Grid.Row="3" Grid.Column="0" Height="20" Width="140" HorizontalAlignment="Left"
+                  Margin="8, 0, 0, 30" VerticalAlignment="Top">
+                <ComboBoxItem Content="a1"></ComboBoxItem>
+                <ComboBoxItem Content="a2"></ComboBoxItem>
+                <ComboBoxItem Content="a3"></ComboBoxItem>
+            </ComboBox>
+
+            <ComboBox Name="R2AttributeComboBox" Grid.Row="3" Grid.Column="1" Height="20" Width="140" HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+                <ComboBoxItem Content="b1"></ComboBoxItem>
+                <ComboBoxItem Content="b2"></ComboBoxItem>
+                <ComboBoxItem Content="b3"></ComboBoxItem>
+                <ComboBoxItem Content="b4"></ComboBoxItem>
+            </ComboBox>
+
+
+
+            <Button Name="joinButton" Grid.Row="1" Grid.Column="2" Width="50" Height="20" Content="Join" Margin="0, 0, 0, 0"
+                VerticalAlignment="Top" Click="ClickEvent"/>
+
+            <ScrollViewer Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Height="200" Width="400" Margin="50, 0, 0, 20">
+                <ListBox Name="R1ListBox" />
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Height="200" Width="400" Margin="50, 0, 0, 20">
+                <ListBox Name="R2ListBox" />
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" Height="200" Width="400" Margin="50, 0, 0, 20">
+                <ListBox Name="JoinResultListBox" />
+            </ScrollViewer>
+            
+        </Grid>
+    </ScrollViewer>
 </Window>

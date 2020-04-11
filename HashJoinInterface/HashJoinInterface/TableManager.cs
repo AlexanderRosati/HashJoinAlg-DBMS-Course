@@ -78,5 +78,47 @@ namespace HashJoinInterface
             //return result
             return joinResult;
         }
+
+        //Description: Gets selectivity of a join
+        public double SelectivityOfJoin(string R1FileName, string R2FileName, string R1Attr, string R2Attr)
+        {
+            //local vars
+            string joinResult;
+            String[] linesOfJoinResult;
+            double selectivityOfJoin;
+            OuterTable outerTableOfJoin = null;
+            InnerTable innerTableOfJoin = null;
+            
+            //find OuterTable object for R1FileName
+            foreach (OuterTable outerTable in outerTables)
+            {
+                if (outerTable.relationName == R1FileName)
+                {
+                    outerTableOfJoin = outerTable;
+                    break;
+                }
+            }
+
+            //find InnerTable object for R2FileName
+            foreach (InnerTable innerTable in innerTables)
+            {
+                if (innerTable.relationName == R2FileName)
+                {
+                    innerTableOfJoin = innerTable;
+                    break;
+                }
+            }
+
+            //do join
+            joinResult = Join(R1FileName, R2FileName, R1Attr, R2Attr);
+
+            //split joinResult into its separate lines
+            linesOfJoinResult = joinResult.Split('\n');
+
+            //calcualte selectivity of join
+            selectivityOfJoin = ((double)(linesOfJoinResult.Length - 1)) / (outerTableOfJoin.numRows*innerTableOfJoin.numRows);
+
+            return selectivityOfJoin;
+        }
     }
 }
