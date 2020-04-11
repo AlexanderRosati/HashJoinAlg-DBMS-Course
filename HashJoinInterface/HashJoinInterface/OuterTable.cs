@@ -46,7 +46,7 @@ namespace HashJoinInterface
             int innerAttrIndx = -1; //which attribute for inner table
 
             //determine outer table attribute
-            for (int i = 0; i < outerAttribute.Length; ++i)
+            for (int i = 0; i < outerAttributes.Length; ++i)
             {
                 if (outerAttributes[i] == outerAttribute)
                 {
@@ -66,8 +66,12 @@ namespace HashJoinInterface
             }
 
             //write header of csv file
-            joinFile.Write(outerTableFile[0].Substring(0, outerTableFile.Length - 1));
+            joinFile.Write(outerTableFile[0]);
+            joinFile.Write(",");
             joinFile.Write(innerTable.innerTableFile[0]);
+
+            //write new line
+            joinFile.Write("\r\n");
 
             //iterate through rows of outer table
             for (int i = 1; i < outerTableFile.Length; ++i)
@@ -82,13 +86,16 @@ namespace HashJoinInterface
                 foreach (long lineNumber in matchingRecords)
                 {
                     //write current record in outer table
-                    joinFile.Write(outerTableFile[i].Substring(0, outerTableFile.Length - 1));
+                    joinFile.Write(outerTableFile[i]);
 
                     //write comma
                     joinFile.Write(',');
 
                     //write matching record in inner table
                     joinFile.Write(innerTable.innerTableFile[lineNumber - 1]);
+
+                    //write new line except at end of file
+                    joinFile.Write("\r\n");
                 }
             }
 
@@ -97,6 +104,9 @@ namespace HashJoinInterface
 
             //turn file into string
             joinResult = File.ReadAllText("../../../JOIN-FILE/JOIN-FILE.csv");
+
+            //cut off extra new line
+            joinResult = joinResult.Substring(0, joinResult.Length - 2);
 
             //delete join file
             File.Delete("../../../JOIN-FILE/JOIN-FILE.csv");

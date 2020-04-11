@@ -58,6 +58,7 @@ namespace HashJoinInterface
                 if (outerTable.relationName == R1FileName)
                 {
                     outerTableForJoin = outerTable;
+                    break;
                 }
             }
 
@@ -67,6 +68,7 @@ namespace HashJoinInterface
                 if (innerTable.relationName == R2FileName)
                 {
                     innerTableForJoin = innerTable;
+                    break;
                 }
             }
 
